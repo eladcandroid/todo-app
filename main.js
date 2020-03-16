@@ -20,6 +20,7 @@ todoDone.forEach(element => {
 })
 
 doneListBtn.addEventListener('click', moveToDoneList);
+todoListBtn.addEventListener('click', moveToTodoList);
 
 function addTodo(event) {
     event.preventDefault();
@@ -57,8 +58,16 @@ function doneTodoItem(event) {
 
 function moveToDoneList (event) {
     event.preventDefault();
-    doneList.style.display = 'block';
+    doneList.style.display = 'flex';
     doneListBtn.style.backgroundColor = '#8cb691'
     todoList.style.display = 'none';
     todoListBtn.style.backgroundColor = 'white';
+}
+
+function moveToTodoList(event) {
+    event.preventDefault();
+    todoList.style.display = 'flex';
+    todoListBtn.style.backgroundColor = '#8cb691';
+    doneList.style.display = 'none';
+    doneListBtn.style.backgroundColor = 'white';
 }
