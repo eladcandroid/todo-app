@@ -1,0 +1,35 @@
+.done-list {
+    display: none;
+    flex-direction: column;
+    background-color: white;
+    
+    .todo-item {
+        height: 30px;
+        display: flex;
+        border: 1px solid #eee;
+        align-items: center;
+        color: green;
+        &:hover {
+            background-color:#94df9d;
+            color: white
+        }
+        
+
+        span {
+            width: 100%;
+        }
+        button {
+            width: 100px;
+            height: 20px;
+            margin-right: 3px;
+            border-style: none;
+            outline: none;
+            border-radius: 10px;
+            &:hover {
+                cursor: pointer;
+                background-color: #8cb691;
+                color: white;
+            }
+        }
+    }
+}

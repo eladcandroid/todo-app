@@ -1,5 +1,7 @@
 const input = document.querySelector(".todo-input");
 const addBtn = document.querySelector(".add-btn");
+const doneListBtn = document.querySelector(".done-list-btn")
+const doneList = document.querySelector(".done-list");
 const todoList = document.querySelector(".todo-list");
 const todoDiv = document.querySelector(".todo-item");
 const colorBtn = document.querySelector(".color-btn");
@@ -12,9 +14,10 @@ todoRemove.forEach(element => {
     element.addEventListener('click', removeTodoItem);
 })
 todoDone.forEach(element => {
-    element.addEventListener('click', doneTodoItem)
+    element.addEventListener('click', doneTodoItem);
 })
 
+doneListBtn.addEventListener('click', moveToDoneList);
 
 function addTodo(event) {
     event.preventDefault();
@@ -44,5 +47,14 @@ function doneTodoItem(event) {
     event.preventDefault();
     let parentElement = this.parentElement;
     let firstElementChild = parentElement.firstElementChild
+    let lastElementChild = parentElement.lastElementChild;
     firstElementChild.style.textDecoration = 'line-through';
+    lastElementChild.style.display = 'none';
+    doneList.appendChild(parentElement)
+}
+
+function moveToDoneList (event) {
+    event.preventDefault();
+    doneList.style.display = 'block';
+    todoList.style.display = 'none';
 }
