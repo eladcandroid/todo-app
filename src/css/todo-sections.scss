@@ -6,6 +6,7 @@
         background-color: #fff;
         border: 1px solid #ccc;
         transition: background-color 0.2s ease-in-out;
+        outline: none;
 
         &:hover {
             background-color: #eee;
@@ -13,6 +14,9 @@
 
         &.active {
             background-color: #8cb691;
+            &:hover {
+                background-color: #eee;
+            }
         }
     }
 }
