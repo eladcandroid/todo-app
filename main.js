@@ -4,11 +4,15 @@ const todoList = document.querySelector(".todo-list");
 const todoDiv = document.querySelector(".todo-item");
 const colorBtn = document.querySelector(".color-btn");
 const todoRemove = document.querySelectorAll(".todo-remove");
+const todoDone = document.querySelectorAll(".todo-change-action");
 
 addBtn.addEventListener('click', addTodo);
 colorBtn.addEventListener('click', toggleColor);
 todoRemove.forEach(element => {
     element.addEventListener('click', removeTodoItem);
+})
+todoDone.forEach(element => {
+    element.addEventListener('click', doneTodoItem)
 })
 
 
@@ -30,8 +34,15 @@ function toggleColor(event) {
     }
 }
 
-function removeTodoItem (event) {
+function removeTodoItem(event) {
     event.preventDefault();
     const thisDiv = this.parentElement
     thisDiv.remove();
+}
+
+function doneTodoItem(event) {
+    event.preventDefault();
+    let parentElement = this.parentElement;
+    let firstElementChild = parentElement.firstElementChild
+    firstElementChild.style.textDecoration = 'line-through';
 }
