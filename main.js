@@ -3,9 +3,14 @@ const addBtn = document.querySelector(".add-btn");
 const todoList = document.querySelector(".todo-list");
 const todoDiv = document.querySelector(".todo-item");
 const colorBtn = document.querySelector(".color-btn");
+const todoRemove = document.querySelectorAll(".todo-remove");
 
 addBtn.addEventListener('click', addTodo);
-colorBtn.addEventListener('click', toggleColor)
+colorBtn.addEventListener('click', toggleColor);
+todoRemove.forEach(element => {
+    element.addEventListener('click', removeTodoItem);
+})
+
 
 function addTodo(event) {
     event.preventDefault();
@@ -23,4 +28,10 @@ function toggleColor(event) {
     } else {
         todoList.style.backgroundColor = 'white';
     }
+}
+
+function removeTodoItem (event) {
+    event.preventDefault();
+    const thisDiv = this.parentElement
+    thisDiv.remove();
 }
