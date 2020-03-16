@@ -11,4 +11,5 @@ function addTodo(event) {
     newDiv = todoDiv.cloneNode(true);
     newDiv.firstElementChild.textContent = input.value;
     todoList.appendChild(newDiv);
+    input.value = ''
 }
