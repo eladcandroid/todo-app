@@ -27,6 +27,9 @@ todoListBtn.addEventListener('click', moveToTodoList);
 
 function addTodo(event) {
     event.preventDefault();
+    if (input.value === '') {
+        return alert('Please enter a task!');
+    }
     let newDiv = document.createElement("div");
     newDiv = todoDiv.cloneNode(true);
     newDiv.firstElementChild.textContent = input.value;
