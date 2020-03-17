@@ -9,7 +9,30 @@
 
     .todo-input {
         height: 50px;
+        width: 100%;
+        outline: none;
     }
+    
+    .add-btn {
+        border-style: solid 3px;
+        height: 50px;
+        outline: none;
+        &:hover {
+            cursor: pointer;
+            background-color: grey;
+        }
+    }
+
+    .color-btn {
+        border-style: solid 3px;
+        height: 50px;
+        outline: none;
+        &:hover {
+            cursor: pointer;
+            background-color: grey;
+        }
+    }
+
 
     .todo-sections {
         height: 50px;
