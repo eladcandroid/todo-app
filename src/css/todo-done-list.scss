@@ -1,7 +1,8 @@
 .done-list {
     display: none;
     flex-direction: column;
-    background-color: white;
+    background-color: grey;
+    height: 100%;
     
     .todo-item {
         height: 30px;
